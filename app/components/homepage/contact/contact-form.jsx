@@ -12,6 +12,7 @@ function ContactForm() {
     email: '',
     message: '',
   });
+  
   const [error, setError] = useState({
     email: false,
     required: false,
