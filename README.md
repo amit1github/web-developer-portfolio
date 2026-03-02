@@ -64,6 +64,6 @@ All portfolio content is typed and strictly structured. You can easily update yo
 
 ## 📬 Contact
 
-- **Email:** amitkryadav8991@gmail.com
+- **Email:** amityadavinvalid@gmail.com
 - **LinkedIn:** [amit-kr-yadav](https://www.linkedin.com/in/amit-kr-yadav/)
 - **GitHub:** [amit1github](https://github.com/amit1github)

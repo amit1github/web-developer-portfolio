@@ -16,7 +16,7 @@ export const personalData: PersonalDataType = {
   designation: "Full Stack Developer",
   description:
     "Full Stack Developer (MERN) with 4 years of experience. Proficient in Node.js, Nest.js, Express.js, MongoDB, React.js, TypeScript, and AWS. Experienced in building scalable SaaS platforms, third-party API integrations, and end-to-end feature development across domains like e-commerce, finance, and media. Skilled in backend architecture, secure RESTful APIs, and cross-functional collaboration.",
-  email: "amitkryadav8991@gmail.com",
+  email: "amityadavinvalid@gmail.com",
   address: "Bengaluru, Karnataka",
   github: "https://github.com/amit1github",
   linkedIn: "https://www.linkedin.com/in/amit-kr-yadav/",
