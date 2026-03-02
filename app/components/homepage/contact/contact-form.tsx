@@ -11,36 +11,46 @@ function ContactForm() {
     name: '',
     email: '',
     message: '',
+    subject: '',
   });
-  
+
   const [error, setError] = useState({
     email: false,
     required: false,
   });
 
   const checkRequired = () => {
-    if (input.email && input.message && input.name) {
+    if (input.email && input.message && input.name && input.subject) {
       setError({ ...error, required: false });
     }
   };
 
-  const handleSendMail = async (e) => {
+  const handleSendMail = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!input.email || !input.message || !input.name) {
+    if (!input.email || !input.message || !input.name || !input.subject) {
       setError({ ...error, required: true });
       return;
     } else if (error.email) {
       return;
     } else {
       setError({ ...error, required: false });
-    };
+    }
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+    const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string };
 
     try {
-      const res = await emailjs.send(serviceID, templateID, input, options);
+      const templateParams = {
+        to_name: "", // You can change this or remove it
+        from_name: input.name,
+        from_email: input.email,
+        subject: input.subject,
+        message: input.message,
+        reply_to: input.email,
+      };
+
+      const res = await emailjs.send(serviceID, templateID, templateParams, options);
 
       if (res.status === 200) {
         toast.success('Message sent successfully!');
@@ -48,11 +58,12 @@ function ContactForm() {
           name: '',
           email: '',
           message: '',
+          subject: '',
         });
-      };
-    } catch (error) {
-      toast.error(error?.text || error);
-    };
+      }
+    } catch (error: any) {
+      toast.error(error?.text || error.toString());
+    }
   };
 
   return (
@@ -70,10 +81,10 @@ function ContactForm() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="text"
-              maxLength="100"
+              maxLength={100}
               name='from_name'
               required={true}
-              onChange={(e) => setInput({ ...input, name: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput({ ...input, name: e.target.value })}
               onBlur={checkRequired}
               value={input.name}
             />
@@ -84,11 +95,11 @@ function ContactForm() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="email"
-              maxLength="100"
+              maxLength={100}
               name='from_email'
               required={true}
               value={input.email}
-              onChange={(e) => setInput({ ...input, email: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput({ ...input, email: e.target.value })}
               onBlur={() => {
                 checkRequired();
                 setError({ ...error, email: !isValidEmail(input.email) });
@@ -100,22 +111,36 @@ function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
+            <label className="text-base">Your Subject: </label>
+            <input
+              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              type="text"
+              maxLength={100}
+              name='subject'
+              required={true}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput({ ...input, subject: e.target.value })}
+              onBlur={checkRequired}
+              value={input.subject}
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
             <label className="text-base">Your Message: </label>
             <textarea
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              maxLength="500"
+              maxLength={500}
               name="message"
               required={true}
-              onChange={(e) => setInput({ ...input, message: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setInput({ ...input, message: e.target.value })}
               onBlur={checkRequired}
-              rows="4"
+              rows={4}
               value={input.message}
             />
           </div>
           <div className="flex flex-col items-center gap-2">
             {error.required &&
               <p className="text-sm text-red-400">
-                Email and Message are required!
+                All fields are required!
               </p>
             }
             <button
@@ -131,6 +156,6 @@ function ContactForm() {
       </div>
     </div>
   );
-};
+}
 
 export default ContactForm;

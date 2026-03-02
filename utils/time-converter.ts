@@ -1,9 +1,15 @@
-export function timeConverter(isoTime) {
+/**
+ * Converts an ISO time string into a human-readable relative time string (e.g., "5 minutes ago").
+ * 
+ * @param {string} isoTime - The ISO formatted time string.
+ * @returns {string} A relative time string representation.
+ */
+export function timeConverter(isoTime: string): string {
   const currentTime = new Date().getTime();
   const pastTime = new Date(isoTime).getTime();
-  const timeDifference = currentTime - pastTime;
+  const timeDifferenceInMs = currentTime - pastTime;
 
-  const seconds = Math.floor(timeDifference / 1000);
+  const seconds = Math.floor(timeDifferenceInMs / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);

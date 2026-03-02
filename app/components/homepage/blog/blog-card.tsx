@@ -5,19 +5,27 @@ import Link from 'next/link';
 import { BsHeartFill } from 'react-icons/bs';
 import { FaCommentAlt } from 'react-icons/fa';
 
-function BlogCard({ blog }) {
+interface BlogCardProps {
+  blog: any;
+}
+
+function BlogCard({ blog }: BlogCardProps) {
 
   return (
     <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
     >
-      <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
-        <Image
-          src={blog?.cover_image}
-          height={1080}
-          width={1920}
-          alt=""
-          className='h-full w-full group-hover:scale-110 transition-all duration-300'
-        />
+      <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg bg-[#11152c] flex items-center justify-center">
+        {blog?.cover_image ? (
+          <Image
+            src={blog.cover_image}
+            height={1080}
+            width={1920}
+            alt={blog.title || "Blog cover"}
+            className='h-full w-full group-hover:scale-110 transition-all duration-300 object-cover'
+          />
+        ) : (
+          <span className="text-gray-500 font-medium tracking-wider">No cover image</span>
+        )}
       </div>
       <div className="p-2 sm:p-3 flex flex-col">
         <div className="flex justify-between items-center text-[#16f2b3] text-sm">

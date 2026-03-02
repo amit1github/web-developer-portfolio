@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaCode, FaPlay } from 'react-icons/fa';
-import placeholder from '/public/png/placeholder.png';
 
-const SingleProject = ({ project }) => {
+interface SingleProjectProps {
+  project: any;
+}
+
+const SingleProject = ({ project }: SingleProjectProps) => {
   const { name, description, tags, code, demo, image, features } = project;
 
   return (
@@ -39,14 +42,18 @@ const SingleProject = ({ project }) => {
         <h2 className='text-[#EFF3F4] not-italic font-semibold text-[1.525rem] leading-[110%] text-center capitalize'>
           {name}
         </h2>
-        <div className="p-6">
-          <Image
-            src={image ? image?.src : placeholder}
-            alt={name}
-            width={1080}
-            height={720}
-            className="w-80 h-64 transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-0"
-          />
+        <div className="p-6 flex items-center justify-center bg-[#11152c] rounded-lg h-[260px] w-full">
+          {image && image.trim() !== '' ? (
+            <Image
+              src={image}
+              alt={name || "Project"}
+              width={1080}
+              height={720}
+              className="w-full h-full object-cover transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-0"
+            />
+          ) : (
+            <span className="text-gray-500 font-medium tracking-wider select-none text-center">No project preview available</span>
+          )}
         </div>
         <div className="flex items-center justify-between w-full">
           <Link
@@ -55,7 +62,7 @@ const SingleProject = ({ project }) => {
             className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 decoration-clone cursor-pointer no-underline delay-[0.3s]">
             <FaPlay />
           </Link>
-          
+
           <Link
             href={code}
             target='_blank'
@@ -68,7 +75,7 @@ const SingleProject = ({ project }) => {
         {description}
       </p>
       <div className='group-hover:translate-x-0 absolute w-[140px] text-[0.8rem] flex justify-center gap-2 flex-col translate-x-full transition-transform duration-[0.5s] delay-[0.3s] p-[0.825rem] rounded-[10px_0_0_10px] right-0 bottom-4 bg-[#0f0b24] text-[#EFF3F4]'>
-        {tags.map((tag, id) => (
+        {tags && tags.map((tag: string, id: number) => (
           <span className='font-medium break-words text-xs' key={id}>
             {tag}
           </span>

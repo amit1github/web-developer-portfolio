@@ -18,7 +18,7 @@ function Footer() {
               href="https://www.linkedin.com/in/amit-kr-yadav/"
               className="text-[#16f2b3]"
             >
-              Amit Kumar Yadav
+
             </Link>
           </p>
           <div className="flex items-center gap-5">
