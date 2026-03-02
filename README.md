@@ -1,142 +1,77 @@
-# Developer Portfolio
+# Developer Portfolio - Amit Yadav
 
-### Are you struggling to create a professional portfolio website? Look no further! You can use the Developer Portfolio template and create your very own personalized portfolio today! My website is designed to be user-friendly and easily customizable, making it perfect for both developers and freelancers.
+A professional, fully responsive Full Stack Developer Portfolio modernised with **Next.js 14**, **React 18**, and **TypeScript**. Designed to showcase experience, projects, and skills with a sleek aesthetic and optimal performance.
 
 ---
 
-# Demo :movie_camera:
+## View Live Preview :sparkles:
+
+[**amityadav.vercel.app**](https://amityadav.vercel.app/)
 
 ![](./public/image/screen.png)
 
-## View live preview [here](https://abusaid.netlify.app/).
+---
+
+## ⚡ Tech Stack & Architecture
+
+- **Core:** Next.js (App Router), React, TypeScript
+- **Styling:** Tailwind CSS, SCSS Modules
+- **Animations:** Lottie React, React Fast Marquee
+- **Forms & Integration:** EmailJS, React Toastify, React Icons
+- **Backend & Cloud (Experience Base):** Node.js, Nest.js, Express, MongoDB, AWS (EC2, S3), Redis, Socket.io, Meta APIs
 
 ---
 
-## Table of Contents :scroll:
+## 🚀 Getting Started Locally
 
-- [Sections](#sections-bookmark)
-- [Demo](#demo-movie_camera)
-- [Installation](#installation-arrow_down)
-- [Getting Started](#getting-started-dart)
-- [Usage](#usage-joystick)
-- [Packages Used](#packages-used-package)
+### Prerequisites
 
----
+- [Node.js](https://nodejs.org/en/download/) (v18+ recommended)
+- Git
 
-# Sections :bookmark:
+### Installation
 
-- HERO SECTION
-- ABOUT ME
-- EXPERIENCE
-- SKILLS
-- PROJECTS
-- EDUCATION
-- BLOG
-- CONTACTS
-
----
-
-# Installation :arrow_down:
-
-### You will need to download Git and Node to run this project
-
-- [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
-
-#### Make sure you have the latest version of both Git and Node on your computer.
-
-```
-node --version
-git --version
+1. Clone the repository:
+```bash
+git clone https://github.com/amit1github/web-developer-portfolio.git
+cd web-developer-portfolio
 ```
 
-## <br />
-
-# Getting Started :dart:
-
-### Fork and Clone the repo
-
-To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
-
-```
-git clone https://github.com/<YOUR GITHUB USERNAME>/developer-portfolio.git
-
-cd developer-portfolio
-```
-
-### Install packages from the root directory
-
+2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
 ```
 
-Then, run the development server:
+3. Environment Variables Setup (`.env`):
+Duplicate the `.env.example` file to create a new `.env` file in the root directory and populate your EmailJS credentials:
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
+4. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the application locally.
 
 ---
 
-# Usage :joystick:
+## 📂 Content Management
 
-Goto [emailjs.com](https://www.emailjs.com/) and create a new account for the mail sending. In free trial you will get 200 mail per month. After setup `emailjs` account, Please create a new `.env` file from `.env.example` file.
-
-Eg:
-
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID =
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID =
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
-```
-
-### Then, Customize data in the `utils/data` [folder](https://github.com/said7388/developer-portfolio/tree/main/utils/data).
-
-Eg:
-
-```javascript
-export const personalData = {
-  name: "",
-  profile: "/profile.png",
-  designation: "Full-Stack Software Developer",
-  description: "My name is Amit Kumar....",
-  email: "abusaid7388@gmail.com",
-  phone: "+8801608797655",
-  address: "Dhaka, Bangladesh",
-  github: "https://github.com/said7388",
-  facebook: "https://www.facebook.com/abusaid.riyaz/",
-  linkedIn: "https://www.linkedin.com/in/abu-said-bd/",
-  twitter: "https://twitter.com/said7388",
-  stackOverflow: "https://stackoverflow.com/users/16840768/abu-said",
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
-  resume: "...",
-};
-```
-
-`devUsername` Used for fetching blog from `dev.to`.
+All portfolio content is typed and strictly structured. You can easily update your details by modifying the TypeScript definitions in the `utils/data/` directory:
+- `personal-data.ts` - Basic info, bio, and social links.
+- `experience.ts` - Work history.
+- `projects-data.ts` - Featured projects and technical stack.
+- `skills.ts` - Array of technical skills rendered in the Marquee.
+- `educations.ts` - Academic background.
 
 ---
 
----
+## 📬 Contact
 
-# Packages Used :package:
-
-| Used Package List  |
-| :----------------: |
-|        next        |
-|  @emailjs/browser  |
-|    lottie-react    |
-| react-fast-marquee |
-|    react-icons     |
-|   react-toastify   |
-|        sass        |
-|    tailwindcss     |
-
----
+- **Email:** amitkryadav8991@gmail.com
+- **LinkedIn:** [amit-kr-yadav](https://www.linkedin.com/in/amit-kr-yadav/)
+- **GitHub:** [amit1github](https://github.com/amit1github)
