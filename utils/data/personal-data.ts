@@ -26,12 +26,12 @@ export const personalData: PersonalDataType = {
   phone: "",
   address: "Bengaluru, Karnataka",
   github: "https://github.com/amit1github",
-  facebook: "https://www.facebook.com/amit-kumar-yadav/",
+  facebook: "",
   linkedIn: "https://www.linkedin.com/in/amit-kr-yadav/",
-  twitter: "https://twitter.com/amit-kumar-yadav",
-  stackOverflow: "https://stackoverflow.com/users/amit-kumar-yadav",
-  leetcode: "https://leetcode.com/amit-kumar-yadav/",
-  devUsername: "amit-kumar-yadav",
+  twitter: "",
+  stackOverflow: "",
+  leetcode: "",
+  devUsername: "",
   resume:
     "https://drive.google.com/file/d/1wUBDUf2IjTkoZyF_vRXwtKNSG310jquY/view?usp=sharing",
 };
