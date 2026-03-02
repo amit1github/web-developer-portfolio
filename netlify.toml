@@ -2,5 +2,8 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_EMAILJS_SERVICE_ID,NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,NEXT_PUBLIC_EMAILJS_PUBLIC_KEY"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
