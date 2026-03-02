@@ -4,14 +4,6 @@ A professional, fully responsive Full Stack Developer Portfolio modernised with 
 
 ---
 
-## View Live Preview :sparkles:
-
-[**amityadav.vercel.app**](https://amityadav.vercel.app/)
-
-![](./public/image/screen.png)
-
----
-
 ## ⚡ Tech Stack & Architecture
 
 - **Core:** Next.js (App Router), React, TypeScript
