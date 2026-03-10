@@ -16,13 +16,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} select-none`}>
         <ToastContainer />
         <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
           <Navbar />
           {children}
         </main>
         <Footer />
+        <script dangerouslySetInnerHTML={{ __html: `document.addEventListener('contextmenu', event => event.preventDefault());` }} />
       </body>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM as string} />
     </html>
