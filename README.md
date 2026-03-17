@@ -6,11 +6,13 @@ A professional, fully responsive Full Stack Developer Portfolio modernised with 
 
 ## ⚡ Tech Stack & Architecture
 
-- **Core:** Next.js (App Router), React, TypeScript
-- **Styling:** Tailwind CSS, SCSS Modules
-- **Animations:** Lottie React, React Fast Marquee
-- **Forms & Integration:** EmailJS, React Toastify, React Icons
-- **Backend & Cloud (Experience Base):** Node.js, Nest.js, Express, MongoDB, AWS (EC2, S3), Redis, Socket.io, Meta APIs
+- **Languages:** JavaScript (ES6+), TypeScript  
+- **Backend:** Node.js, Nest.js, Express.js, RESTful APIs, WebSockets, Socket.io  
+- **Frontend:** React.js, Next.js(App Router), Redux, Tailwind CSS, Material-UI  
+- **Databases & Caching:** MongoDB, MySQL, Redis  
+- **Architecture:** Monolithic, Microservice & Event-Driven Architecture  
+- **Messaging & Queuing:** RabbitMQ, SQS, BullMQ, Cron-based Job Scheduling  
+- **Cloud, DevOps & Infra:** AWS (EC2, S3, Lambda, CloudWatch, IAM), Docker, CI/CD, Nginx, Git, Datadog, Grafana  
 
 ---
 
