@@ -1,11 +1,8 @@
 export const contactsData = {
     email: 'amityadavinvalid@gmail.com',
     phone: '',
-    address: 'Bengaluru, Karnataka',
+    address: '',
     github: 'https://github.com/amit1github',
-    facebook: 'https://www.facebook.com/',
-    linkedIn: 'https://www.linkedin.com/in/',
-    twitter: 'https://twitter.com/',
     stackOverflow: 'https://stackoverflow.com/users/',
     devUsername: "amit1234"
 }

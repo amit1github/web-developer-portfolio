@@ -1,7 +1,8 @@
 // @flow strict
 import Link from "next/link";
+import { BiLogoLinkedin } from "react-icons/bi";
 import { CgGitFork } from "react-icons/cg";
-import { IoStar } from "react-icons/io5";
+import { IoLogoGithub, IoStar } from "react-icons/io5";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm">
-            © Developer Portfolio by{" "}
+            © Developer Portfolio by{" Amit Kumar"}
             <Link
               target="_blank"
               href="https://www.linkedin.com/in/amit-kr-yadav/"
@@ -24,18 +25,36 @@ function Footer() {
           <div className="flex items-center gap-5">
             <Link
               target="_blank"
-              href="https://github.com/amit1github/web-developer-portfolio"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              href="https://github.com/amit1github"
+              className="flex items-center gap-2 uppercase hover:text-[#06B6D4]"
             >
-              <IoStar />
+              <IoLogoGithub size={24} />
+              <span>GitHub</span>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/amit-kr-yadav/"
+              className="flex items-center gap-2 uppercase hover:text-[#06B6D4]"
+            >
+              <BiLogoLinkedin size={24} />
+              <span>LinkedIn</span>
+            </Link>
+          </div>
+          <div className="flex items-center gap-5">
+            <Link
+              target="_blank"
+              href="https://github.com/amit1github/web-developer-portfolio"
+              className="flex items-center gap-2 uppercase hover:text-[#06B6D4]"
+            >
+              <IoStar size={20} />
               <span>Star</span>
             </Link>
             <Link
               target="_blank"
               href="https://github.com/amit1github/web-developer-portfolio"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              className="flex items-center gap-2 uppercase hover:text-[#06B6D4]"
             >
-              <CgGitFork />
+              <CgGitFork size={20} />
               <span>Fork</span>
             </Link>
           </div>

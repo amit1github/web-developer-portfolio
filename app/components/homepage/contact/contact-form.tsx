@@ -68,18 +68,18 @@ function ContactForm() {
 
   return (
     <div className="">
-      <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
+      <p className="font-semibold mb-5 text-cyan-400 text-xl uppercase tracking-widest drop-shadow-sm">
         Contact with me
       </p>
-      <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
-        <p className="text-sm text-[#d3d8e8]">
+      <div className="max-w-3xl text-slate-200 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/10 p-3 lg:p-5 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+        <p className="text-sm text-slate-400 leading-relaxed">
           {"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}
         </p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <label className="text-base">Your Name: </label>
+            <label className="text-base text-slate-300 font-medium tracking-wide">Your Name: </label>
             <input
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              className="bg-slate-950/50 w-full border rounded-md border-white/10 focus:border-cyan-400 focus:shadow-[0_0_10px_rgba(6,182,212,0.3)] ring-0 outline-none transition-all duration-300 px-3 py-2 text-slate-200 placeholder:text-slate-500"
               type="text"
               maxLength={100}
               name='from_name'
@@ -91,9 +91,9 @@ function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-base">Your Email: </label>
+            <label className="text-base text-slate-300 font-medium tracking-wide">Your Email: </label>
             <input
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              className="bg-slate-950/50 w-full border rounded-md border-white/10 focus:border-cyan-400 focus:shadow-[0_0_10px_rgba(6,182,212,0.3)] ring-0 outline-none transition-all duration-300 px-3 py-2 text-slate-200 placeholder:text-slate-500"
               type="email"
               maxLength={100}
               name='from_email'
@@ -111,9 +111,9 @@ function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-base">Your Subject: </label>
+            <label className="text-base text-slate-300 font-medium tracking-wide">Your Subject: </label>
             <input
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              className="bg-slate-950/50 w-full border rounded-md border-white/10 focus:border-cyan-400 focus:shadow-[0_0_10px_rgba(6,182,212,0.3)] ring-0 outline-none transition-all duration-300 px-3 py-2 text-slate-200 placeholder:text-slate-500"
               type="text"
               maxLength={100}
               name='subject'
@@ -125,9 +125,9 @@ function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-base">Your Message: </label>
+            <label className="text-base text-slate-300 font-medium tracking-wide">Your Message: </label>
             <textarea
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              className="bg-slate-950/50 w-full border rounded-md border-white/10 focus:border-cyan-400 focus:shadow-[0_0_10px_rgba(6,182,212,0.3)] ring-0 outline-none transition-all duration-300 px-3 py-2 text-slate-200 placeholder:text-slate-500 resize-y"
               maxLength={500}
               name="message"
               required={true}
@@ -143,14 +143,16 @@ function ContactForm() {
                 All fields are required!
               </p>
             }
-            <button
-              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-              role="button"
-              onClick={handleSendMail}
-            >
-              <span>Send Message</span>
-              <TbMailForward className="mt-1" size={18} />
-            </button>
+            <div className="w-full flex justify-center bg-gradient-to-r from-cyan-500 to-purple-600 p-[1px] rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] md:max-w-max">
+              <button
+                className="flex items-center gap-1 hover:gap-3 rounded-full bg-[#0A0A0A] px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-100 no-underline transition-all duration-300 ease-out hover:bg-transparent"
+                role="button"
+                onClick={handleSendMail}
+              >
+                <span>Send Message</span>
+                <TbMailForward className="mt-1" size={18} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
