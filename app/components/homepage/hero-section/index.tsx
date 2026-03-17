@@ -24,7 +24,7 @@ function HeroSection() {
             Hello, <br />
             This is {' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-sm">{personalData.name}</span>
-            {` , I'm a Professional `}
+            {` , I'm a Senior `}
             <span className="text-cyan-400 drop-shadow-sm">{personalData.designation}</span>
             .
           </h1>
